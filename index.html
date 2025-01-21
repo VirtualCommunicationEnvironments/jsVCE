@@ -504,9 +504,7 @@
             // Add a new message
             addMessageToChat(data.message);
           } else if (data.type == 'reset') {
-            // Reset styles and messages
-            clearChat();
-            resetStyles();
+            // Reload page
             location.reload();
           }
         };

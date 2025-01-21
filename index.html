@@ -486,6 +486,7 @@
             console.log(`Connected to WebSocket server on port ${port}`);
             //break; // Stop trying other ports once connected
           };
+          window.wsConnection = ws;
         } catch (err) {
           console.error(`Failed to connect on port ${port}`, err);
         }
@@ -539,7 +540,6 @@
         sendButton.addEventListener('click', processInput);
         // Ctrl + Enter
         document.addEventListener('keydown', (e) => {
-          console.log(e.key);
           if (e.ctrlKey && e.key === 'Enter') {
             console.log("processing input");
             processInput();

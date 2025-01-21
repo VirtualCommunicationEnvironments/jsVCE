@@ -66,7 +66,7 @@ const wsServers = WS_PORTS.map((port) => {
     ws.on('message', (data) => {
       try {
         // Reset the website
-        if (data == '$reset') {
+        if (data == '$reset' || data.includes('location.reload()')) {
           messages.length = 0;
           // Notify all clients to reset
           wss.clients.forEach((client) => {

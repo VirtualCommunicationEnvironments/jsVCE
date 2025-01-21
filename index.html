@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>VCE CSS with Zen Garden</title>
+  <title>VCE JS with Zen Garden</title>
 
   <link rel="stylesheet" media="screen" href="style.css">
   <link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.csszengarden.com/zengarden.xml">
@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Gerard Llorach, Dave Shea">
   <meta name="description"
-    content="A VCE to modify the CSS of zengarden. A demonstration of what can be accomplished visually through CSS-based design.">
+    content="A VCE to modify the CSS using JS of zengarden. A demonstration of what can be accomplished visually through CSS-based design.">
   <meta name="robots" content="all">
 
 
@@ -58,7 +58,7 @@
       <div id="messages-area"></div>
       <div id="input-area">
         <textarea id="chat-input" type="text"
-          placeholder="Type CSS as in '.summary {background: red}' or '#zen-intro {padding: 10px}. Press Ctrl+Enter to send or press the Send button."></textarea>
+          placeholder="Type JS as in 'alert('hello')' or document.body.style.background = 'red'. Press Ctrl+Enter to send or press the Send button."></textarea>
         <button id="send-button">Send</button>
       </div>
     </div>
@@ -348,7 +348,6 @@
 
       // Body
       Object.assign(document.body.style, {
-        all: 'unset',
         margin: '0px',
         width: '100vw',
         display: 'block',
@@ -356,20 +355,17 @@
 
       // Container
       Object.assign(container.style, {
-        all: 'unset',
         // display: 'block',
       })
 
       // Zen garden container style
       Object.assign(zengardenContainer.style, {
-        all: 'unset',
         width: 'calc(100vw - ' + (chatWidth + 40) + 'px)',
         display: 'block',
       });
 
       // Chat container styles
       Object.assign(chatContainer.style, {
-        all: 'unset',
         position: 'fixed',
         top: '0',
         right: '0',
@@ -386,7 +382,6 @@
 
       // Messages area styles
       Object.assign(messagesArea.style, {
-        all: 'unset',
         flex: '1',
         overflowY: 'auto',
         marginBottom: '10px',
@@ -398,7 +393,6 @@
 
       // Input area styles
       Object.assign(inputArea.style, {
-        all: 'unset',
         display: 'flex',
         gap: '10px',
         'align-items': 'center',
@@ -406,7 +400,6 @@
 
       // Chat input styles
       Object.assign(chatInput.style, {
-        all: 'unset',
         flex: '1',
         padding: '10px',
         border: '1px solid #ccc',
@@ -417,7 +410,6 @@
 
       // Send button styles
       Object.assign(sendButton.style, {
-        all: 'unset',
         padding: '10px 20px',
         border: 'none',
         borderRadius: '5px',
@@ -568,7 +560,6 @@
       const messagesArea = document.getElementById('messages-area');
       const messageDiv = document.createElement('div');
       Object.assign(messageDiv.style, {
-        all: 'unset',
         display: 'block',
         'box-shadow': '0 0 4px rgba(0, 0, 0, 0.4)',
         padding: '4px',
